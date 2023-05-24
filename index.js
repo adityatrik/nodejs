@@ -12,18 +12,7 @@ const server = http.createServer((req, res) => {
     // Berikan respon
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end(`
-        <html>
-          <head>
-            <title>Response</title>
-          </head>
-          <body>
-            <h1>Hello, ${name}!</h1>
-            <p>Your age is ${age}.</p>
-            <p>Response from external server: ${response.data}</p>
-          </body>
-        </html>
-      `);
+    res.end(`Hello, ${name}! Your age is ${age}.`);
   } else {
     res.statusCode = 404;
     res.end('Not Found');
@@ -33,4 +22,4 @@ const server = http.createServer((req, res) => {
 const port = 3002;
 server.listen(port, () => {
   console.log(`Server berjalan di http://localhost:${port}`);
-});
+});;
